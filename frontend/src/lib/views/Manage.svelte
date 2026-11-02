@@ -1,5 +1,5 @@
 <script lang="ts">
-    // Importar las herramientas y los componentes necesarios
+    // Cargar el catálogo y sus formularios
     import { onMount } from "svelte";
     import Cvss from "../components/Cvss.svelte";
     import Modal from "../components/Modal.svelte";
@@ -73,11 +73,11 @@
             ]);
         }
         catch (reason) {
-            // Mostrar el motivo por el que no se completó la operación
+            // Mostrar el error al cargar el catálogo
             error = (reason as Error).message;
         }
         finally {
-            // Terminar el estado de carga aunque ocurra un error
+            // Terminar la carga del catálogo
             loading = false;
         }
     }
@@ -136,11 +136,11 @@
             }
         }
         catch (reason) {
-            // Mostrar el motivo por el que no se completó la operación
+            // Mostrar el error de eliminación
             error = (reason as Error).message;
         }
         finally {
-            // Terminar el estado de carga aunque ocurra un error
+            // Habilitar las acciones del catálogo
             busy = false;
         }
     }
@@ -150,7 +150,7 @@
 <section class="manage-view" class:focused-editor={initialTarget}>
     <header class="page-heading">
         <h1>{initialTarget ? "Editar dependencia" : "Administrar"}</h1>
-        <!-- Mostrar las herramientas del catálogo completo -->
+        <!-- Crear registros desde el catálogo -->
         {#if !initialTarget}
             <button class="primary" disabled={busy || loading} onclick={() => openForm()}>
                 Crear {kind === "projects" ? "proyecto" : kind === "packages" ? "paquete" : "vulnerabilidad"}
@@ -158,7 +158,7 @@
         {/if}
     </header>
 
-    <!-- Mostrar las herramientas del catálogo completo -->
+    <!-- Cambiar el tipo de catálogo -->
     {#if !initialTarget}
         <!-- Elegir el tipo de nodo que se administra -->
         <nav class="tabs" aria-label="Catálogo">
@@ -179,13 +179,14 @@
     {#if error}
         <div class="error-banner" role="alert">{error}</div>
     {/if}
+
     <!-- Confirmar que se guardaron los cambios -->
     {#if notice}
         <div class="notice" role="status">{notice}</div>
     {/if}
 
     <div class="catalog-layout" class:with-relations={relationNode && !initialTarget}>
-        <!-- Mostrar las herramientas del catálogo completo -->
+        <!-- Listar los registros del catálogo -->
         {#if !initialTarget}
             <!-- Mostrar los registros del catálogo seleccionado -->
             <div class="catalog">
@@ -212,10 +213,12 @@
                                 {#if node.ecosystem}
                                     <span class="record-meta">{node.ecosystem}</span>
                                 {/if}
+
                                 <!-- Mostrar la descripción del registro -->
                                 {#if node.description}
                                     <p>{node.description}</p>
                                 {/if}
+
                                 <!-- Mostrar la severidad del CVE -->
                                 {#if node.severity}
                                     <span class="severity {node.severity}">
@@ -224,7 +227,7 @@
                                 {/if}
                             </div>
                             <div class="row-actions">
-                                <!-- Mostrar los campos o acciones propios de proyectos y paquetes -->
+                                <!-- Abrir las dependencias del registro -->
                                 {#if kind !== "vulnerabilities"}
                                     <button
                                         onclick={() => relationNode = node}
@@ -281,7 +284,10 @@
     <Modal
         label="delete-title"
         onclose={() => {
-            if (!busy) deleting = null;
+            // Cerrar la confirmación si no hay una eliminación en curso
+            if (!busy) {
+                deleting = null;
+            }
         }}
     >
         <h2 id="delete-title">¿Eliminar {nodeLabel(deleting)}?</h2>

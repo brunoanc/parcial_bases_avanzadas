@@ -24,8 +24,13 @@ class ProjectPatch(Input):
     @model_validator(mode="before")
     @classmethod
     def reject_nulls(cls, values):
+        # Dejar que Pydantic rechace un cuerpo que no sea un objeto
+        if not isinstance(values, dict):
+            return values
+
         # Revisar cada campo recibido antes de aplicar los cambios
         for value in values.values():
+            # Conservar los valores obligatorios
             if value is None:
                 raise ValueError("Los campos no pueden ser null.")
 
@@ -70,8 +75,13 @@ class VulnerabilityPatch(CvssFields):
     @model_validator(mode="before")
     @classmethod
     def reject_nulls(cls, values):
+        # Dejar que Pydantic rechace un cuerpo que no sea un objeto
+        if not isinstance(values, dict):
+            return values
+
         # Permitir limpiar los campos CVSS, pero no los datos obligatorios
         for field in ("severity", "description"):
+            # Evitar que se borre un dato obligatorio
             if field in values and values[field] is None:
                 raise ValueError("Los campos no pueden ser null.")
 

@@ -1,6 +1,8 @@
 <script lang="ts">
-    // Importar las herramientas y los componentes necesarios
+    // Cargar los proyectos y el control de sesión
     import type { GraphNode } from "../api";
+    import { editor } from "../auth";
+    import Account from "./Account.svelte";
 
     // Recibir los datos y acciones del componente
     export let projects: GraphNode[];
@@ -18,6 +20,7 @@
         class="brand"
         href="/"
         onclick={(event) => {
+            // Volver al explorador sin recargar la aplicación
             event.preventDefault();
             onhome();
         }}
@@ -34,15 +37,17 @@
         </span>
     </a>
 
-    <!-- Abrir la administración de los datos -->
-    <nav class="main-nav" aria-label="Navegación principal">
-        <button
-            class:active={view === "manage"}
-            onclick={onmanage}
-        >
-            Administrar
-        </button>
-    </nav>
+    <!-- Abrir la administración cuando la sesión permite editar -->
+    {#if $editor}
+        <nav class="main-nav" aria-label="Navegación principal">
+            <button
+                class:active={view === "manage"}
+                onclick={onmanage}
+            >
+                Administrar
+            </button>
+        </nav>
+    {/if}
 
     <div class="projects-heading">
         <span>Proyectos</span>
@@ -64,4 +69,6 @@
             <p class="sidebar-empty">{loading ? "Cargando..." : "Todavía no hay proyectos"}</p>
         {/each}
     </div>
+
+    <Account></Account>
 </aside>

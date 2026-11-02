@@ -24,6 +24,7 @@ def serialize_graph(record):
 
         # Identificar el tipo del nodo por su etiqueta
         for label in ("Project", "PackageVersion", "Vulnerability"):
+            # Usar la primera etiqueta reconocida
             if label in node.labels:
                 values["type"] = label
                 break

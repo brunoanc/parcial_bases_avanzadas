@@ -1,4 +1,4 @@
-"""Lee el dataset JSON y carga los nodos y relaciones iniciales en AuraDB."""
+"""Lee los datos JSON y carga los nodos y relaciones iniciales en AuraDB."""
 
 import json
 from pathlib import Path
@@ -78,7 +78,7 @@ if __name__ == "__main__":
     # Usar la conexión solo durante la carga
     try:
         seed(db)
-        print(f"Seed listo: {len(PROJECTS)} proyectos, {len(PACKAGES)} versiones y {len(VULNERABILITIES)} CVEs.")
+        print(f"Carga inicial lista: {len(PROJECTS)} proyectos, {len(PACKAGES)} versiones y {len(VULNERABILITIES)} CVEs.")
     finally:
         # Cerrar la conexión aunque ocurra un error
         db.close()

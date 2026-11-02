@@ -1,14 +1,16 @@
 """Define las rutas HTTP, el inicio de la API y las respuestas de error."""
 
 import logging
+import os
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, Request, Response
+from fastapi import Depends, FastAPI, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from neo4j.exceptions import AuthError, ConstraintError, Neo4jError, ServiceUnavailable, SessionExpired
 
 from .db import Database
+from .auth import require_editor, verify_editor
 from .repository import Repository
 from .schemas import (
     AnalysisResponse,
@@ -56,15 +58,22 @@ app = FastAPI(
     title="DependencyGuard API",
     version="1.0.0",
     lifespan=lifespan,
-    description="Análisis de dependencias npm y CVEs documentados con CVSS. Sin límite de profundidad o cantidad de rutas. Sin autenticación; uso académico local.",
+    description="Análisis de dependencias npm y CVEs documentados con CVSS.",
+    dependencies=[Depends(require_editor)],
 )
 
-# Permitir peticiones desde la interfaz local
+# Permitir peticiones desde la interfaz local y el sitio publicado
+origins = ["http://localhost:5173", "http://127.0.0.1:5173"]
+
+# Agregar la dirección del frontend publicado
+if os.getenv("FRONTEND_URL"):
+    origins.append(os.environ["FRONTEND_URL"])
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=origins,
     allow_methods=["GET", "POST", "PATCH", "DELETE"],
-    allow_headers=["Content-Type"],
+    allow_headers=["Content-Type", "Authorization"],
 )
 
 
@@ -93,6 +102,12 @@ async def database_error(request, error):
 # Obtener las operaciones de la base para esta petición
 def repo(request: Request):
     return request.app.state.repository
+
+
+# Consultar si la sesión tiene permiso para editar
+@app.get("/auth/session", status_code=204, tags=["Auth"], dependencies=[Depends(verify_editor)])
+def session():
+    return Response(status_code=204, headers={"Cache-Control": "no-store"})
 
 
 # Comprobar que AuraDB responde

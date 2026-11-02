@@ -1,5 +1,5 @@
 <script lang="ts">
-    // Importar las herramientas y los componentes necesarios
+    // Cargar Cytoscape, el acomodo y los estilos del mapa
     import { onMount } from "svelte";
     import cytoscape, { type Core } from "cytoscape";
     import { graphStyles } from "../graph/styles";
@@ -74,7 +74,11 @@
                 onselect(null);
             }
         });
-        const observer = new ResizeObserver(() => graph.resize());
+        const observer = new ResizeObserver(() => {
+            // Mantener el mapa visible cuando cambia el tamaño del panel
+            graph.resize();
+            fitView(Boolean(highlighted));
+        });
         observer.observe(container);
 
         return () => {

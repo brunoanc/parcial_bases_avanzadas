@@ -1,6 +1,7 @@
 <script lang="ts">
-    // Importar las herramientas y los componentes necesarios
+    // Cargar las rutas, los detalles y los permisos
     import Cvss from "./Cvss.svelte";
+    import { editor } from "../auth";
     import { nodeLabel, severityLabels, type Analysis, type Finding, type GraphData, type GraphNode } from "../api";
 
     // Recibir los datos y acciones del componente
@@ -64,6 +65,7 @@
                     <dd>{selected.ecosystem}</dd>
                 </dl>
             {/if}
+
             <!-- Mostrar la severidad registrada -->
             {#if selected.severity}
                 <span class="severity {selected.severity}">
@@ -76,8 +78,9 @@
             {#if selected.description}
                 <p>{selected.description}</p>
             {/if}
+
             <!-- Permitir editar las dependencias del nodo -->
-            {#if selected.type !== "Vulnerability"}
+            {#if $editor && selected.type !== "Vulnerability"}
                 <button
                     onclick={() => selected && onedit(selected)}
                 >
@@ -137,9 +140,12 @@
                                 </li>
                             {/each}
                         </ol>
-                        <button class="primary" onclick={() => oneditfinding(finding)}>
-                            Editar dependencia <span aria-hidden="true">→</span>
-                        </button>
+                        <!-- Permitir cambios únicamente con la sesión autorizada -->
+                        {#if $editor}
+                            <button class="primary" onclick={() => oneditfinding(finding)}>
+                                Editar dependencia <span aria-hidden="true">→</span>
+                            </button>
+                        {/if}
                     {:else}
                         <button class="path-action" onclick={() => onhighlight(finding)}>
                             Ver ruta <span aria-hidden="true">→</span>
@@ -147,6 +153,7 @@
                     {/if}
                 </article>
             {/each}
+
             <!-- Permitir leer el resto de las rutas ya analizadas -->
             {#if visibleCount < analysis.findings.length}
                 <p class="scope-note">

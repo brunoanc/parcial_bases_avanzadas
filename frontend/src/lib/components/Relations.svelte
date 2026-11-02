@@ -1,5 +1,5 @@
 <script lang="ts">
-    // Importar las herramientas y los componentes necesarios
+    // Cargar las consultas y la validación de relaciones
     import { onMount } from "svelte";
     import { request, nodeLabel, nodePath, type GraphNode, type Kind, type Neighbors, type DependencyTarget } from "../api";
     import { validateField, clearValidation } from "../forms";
@@ -49,11 +49,11 @@
             relations = await request<Neighbors>(`${nodePath(kind, relationNode.id)}/neighbors`);
         }
         catch (reason) {
-            // Mostrar el motivo por el que no se completó la operación
+            // Mostrar el error de las conexiones
             error = (reason as Error).message;
         }
         finally {
-            // Terminar el estado de carga aunque ocurra un error
+            // Habilitar los controles de relaciones
             busy = false;
         }
     }
@@ -102,11 +102,11 @@
             }
         }
         catch (reason) {
-            // Mostrar el motivo por el que no se completó la operación
+            // Mostrar el error al cambiar la relación
             error = (reason as Error).message;
         }
         finally {
-            // Terminar el estado de carga aunque ocurra un error
+            // Habilitar los controles al terminar el cambio
             busy = false;
         }
     }
@@ -121,6 +121,7 @@
             <button onclick={load} disabled={busy}>Intentar de nuevo</button>
         </div>
     {/if}
+
     <!-- Confirmar que se guardaron los cambios -->
     {#if notice}
         <p class="notice" role="status">{notice}</p>
@@ -130,7 +131,7 @@
             <p class="field-caption">Se usa en</p>
             <h2>{nodeLabel(relationNode)}</h2>
         </div>
-        <!-- Mostrar las herramientas del catálogo completo -->
+        <!-- Cerrar las conexiones abiertas desde el catálogo -->
         {#if !initialTarget}
             <button
                 class="text-button"
@@ -146,6 +147,7 @@
     {#if busy && !relations.packages.length}
         <p class="empty">Cargando dependencias...</p>
     {/if}
+
     <!-- Permitir reemplazar una dependencia existente -->
     {#if relations.packages.length}
         <!-- Elegir qué dependencia se reemplaza y por cuál -->
@@ -154,6 +156,7 @@
             oninvalidcapture={validateField}
             oninputcapture={clearValidation}
             onsubmit={(event) => {
+                // Guardar el reemplazo sin recargar la página
                 event.preventDefault();
                 void changeRelation("dependencies", replacement, false, replacementSource);
             }}
@@ -193,6 +196,7 @@
                         {/each}
                     </optgroup>
                 {/if}
+
                 <!-- Ofrecer otros paquetes como reemplazo -->
                 {#if otherPackages.length}
                     <optgroup label="Otros paquetes">
@@ -273,7 +277,7 @@
         </button>
     </details>
 
-    <!-- Mostrar los datos y conexiones de la versión -->
+    <!-- Administrar los CVEs asociados a esta versión -->
     {#if kind === "packages"}
         <!-- Consultar y modificar las conexiones directas -->
         <details class="dependency-tools" open={!initialTarget?.dependencyId}>

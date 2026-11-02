@@ -132,11 +132,13 @@ class Repository:
             if not remove and body.sourceType == "package":
                 # Bloquear las versiones en orden antes de comprobar el ciclo
                 # Así dos peticiones no aprueban al mismo tiempo caminos incompatibles
-                tx.run("""
+                tx.run(
+                    """
                     MATCH (n:PackageVersion)
                     WITH n ORDER BY n.id
                     SET n.id = n.id
-                    """).consume()
+                    """
+                ).consume()
                 cycle = tx.run(
                     """
                     MATCH (t:PackageVersion {id: $target}), (s:PackageVersion {id: $source})
@@ -177,6 +179,7 @@ class Repository:
                 action = "MATCH (s)-[r:DEPENDS_ON]->(t) DELETE r"
             else:
                 action = "MERGE (s)-[:DEPENDS_ON]->(t)"
+
             tx.run(
                 f"MATCH (s:{label} {{id: $source}}), (t:PackageVersion {{id: $target}}) {action}",
                 source=body.sourceId,
@@ -204,6 +207,7 @@ class Repository:
                 action = "MATCH (p)-[r:AFFECTED_BY]->(v) DELETE r"
             else:
                 action = "MERGE (p)-[:AFFECTED_BY]->(v)"
+
             tx.run(
                 f"MATCH (p:PackageVersion {{id: $package}}), (v:Vulnerability {{id: $vulnerability}}) {action}",
                 package=body.packageId,

@@ -67,6 +67,88 @@
     }
 }
 
+@media (max-width: 600px) {
+    .app-shell {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .sidebar {
+        padding: 16px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+        font-size: 15px;
+    }
+
+    .main-nav {
+        margin-top: 16px;
+    }
+
+    .projects-heading {
+        margin: 16px 0 8px;
+    }
+
+    .project-list {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--subtle) var(--surface);
+    }
+
+    .project-list button {
+        flex: none;
+    }
+
+    .account {
+        margin-top: 16px;
+        padding-top: 0;
+        justify-items: start;
+    }
+
+    .explorer-heading, .page-heading, .error-banner {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .explorer-heading, .manage-view {
+        padding: 20px 16px;
+    }
+
+    .explorer-layout {
+        margin: 0 16px 16px;
+    }
+
+    .graph-toolbar {
+        flex-wrap: wrap;
+        padding: 10px 12px;
+    }
+
+    .metrics {
+        gap: 16px;
+    }
+
+    .legend {
+        flex-wrap: wrap;
+        gap: 8px 12px;
+    }
+
+    .tabs {
+        gap: 12px;
+        overflow-x: auto;
+    }
+
+    .tabs button {
+        flex: none;
+    }
+
+    .row-actions {
+        justify-content: flex-start;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation: none !important;

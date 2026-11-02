@@ -1,5 +1,5 @@
 <script lang="ts">
-    // Importar las herramientas y los componentes necesarios
+    // Cargar el diálogo y la validación del formulario
     import Modal from "./Modal.svelte";
     import { request, nodePath, severityLabels, type GraphNode, type Kind } from "../api";
     import { validateField, clearValidation } from "../forms";
@@ -64,20 +64,24 @@
             onclose();
         }
         catch (reason) {
-            // Mostrar el motivo por el que no se completó la operación
+            // Mostrar el error al guardar el registro
             error = (reason as Error).message;
         }
         finally {
-            // Terminar el estado de carga aunque ocurra un error
+            // Habilitar el formulario al terminar
             busy = false;
         }
     }
 </script>
 
+<!-- Abrir el formulario y evitar cerrarlo durante el guardado -->
 <Modal
     label="form-title"
     onclose={() => {
-        if (!busy) onclose();
+        // Cerrar solo cuando no se está guardando
+        if (!busy) {
+            onclose();
+        }
     }}
 >
     <header>
@@ -95,11 +99,12 @@
     </header>
     <!-- Capturar y validar los datos antes de guardarlos -->
     <form onsubmit={save} oninvalidcapture={validateField} oninputcapture={clearValidation}>
-        <!-- Mostrar los campos o acciones propios de proyectos y paquetes -->
+        <!-- Capturar el nombre de un proyecto o paquete -->
         {#if kind !== "vulnerabilities"}
             <label for="node-name">Nombre</label>
             <input id="node-name" bind:value={form.name} required maxlength="100">
         {/if}
+
         <!-- Mostrar los datos y conexiones de la versión -->
         {#if kind === "packages"}
             <!-- Explicar cómo se guarda una versión distinta -->
@@ -118,7 +123,8 @@
                 bind:value={form.ecosystem}
                 required
                 maxlength="30"
-                pattern="[a-z0-9\-]+">
+                pattern="[a-z0-9\-]+"
+            >
         {:else}
             <!-- Mostrar el identificador y la puntuación del CVE -->
             {#if kind === "vulnerabilities"}
@@ -130,7 +136,8 @@
                     required
                     pattern={"(CVE-[0-9]{4}-[0-9]{4,}|DEMO-[A-Z0-9\\-]+)"}
                     placeholder="CVE-2021-44906"
-                    maxlength="60">
+                    maxlength="60"
+                >
                 <label for="severity">Severidad</label>
                 <select id="severity" bind:value={form.severity}>
                     <!-- Ofrecer los niveles de severidad disponibles -->
@@ -147,20 +154,23 @@
                     min="0"
                     max="10"
                     step="0.1"
-                    bind:value={form.cvssScore}>
+                    bind:value={form.cvssScore}
+                >
                 <label for="cvss-vector">Vector CVSS</label>
                 <input
                     id="cvss-vector"
                     bind:value={form.cvssVector}
                     maxlength="200"
-                    placeholder="CVSS:3.1/AV:N/AC:L/…">
+                    placeholder="CVSS:3.1/AV:N/AC:L/…"
+                >
                 <label for="source-url">Fuente</label>
                 <input
                     id="source-url"
                     type="url"
                     pattern="https://.*"
                     bind:value={form.sourceUrl}
-                    maxlength="500">
+                    maxlength="500"
+                >
             {/if}
 
             <label for="description">Descripción</label>
@@ -169,8 +179,10 @@
                 bind:value={form.description}
                 required={kind === "vulnerabilities"}
                 maxlength="2000"
-                rows="4"></textarea>
+                rows="4"
+            ></textarea>
         {/if}
+
         <!-- Mostrar el error de la operación -->
         {#if error}
             <p class="inline-error" role="alert">{error}</p>

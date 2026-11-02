@@ -1,5 +1,5 @@
 <script lang="ts">
-    // Importar las herramientas y los componentes necesarios
+    // Usar los datos del nodo para mostrar CVSS
     import type { GraphNode } from "../api";
 
     // Recibir los datos y acciones del componente
@@ -17,6 +17,7 @@
         <strong>{node.cvssScore.toLocaleString("es-MX", { minimumFractionDigits: 1 })}</strong>
     </span>
 {/if}
+
 <!-- Enlazar el aviso original del CVE -->
 {#if source && node.sourceUrl}
     <a class="advisory-source" href={node.sourceUrl} target="_blank" rel="noreferrer">

@@ -1,0 +1,98 @@
+name: Desplegar
+
+on:
+    push:
+        branches: [main]
+        paths:
+            - "backend/**"
+            - "frontend/**"
+            - "infra/**"
+            - "firebase.json"
+            - "Dockerfile"
+            - ".dockerignore"
+            - ".github/workflows/deploy.yml"
+    workflow_dispatch:
+
+permissions:
+    contents: read
+    id-token: write
+
+concurrency:
+    group: deploy
+    cancel-in-progress: false
+
+jobs:
+    deploy:
+        if: github.ref == 'refs/heads/main'
+        runs-on: ubuntu-latest
+        env:
+            TF_IN_AUTOMATION: "true"
+            TF_VAR_project_id: ${{ vars.GCP_PROJECT_ID }}
+            TF_VAR_site_id: ${{ vars.FIREBASE_SITE_ID }}
+            TF_VAR_editor_email: ${{ vars.EDITOR_EMAIL }}
+            TF_VAR_region: ${{ vars.GCP_REGION || 'us-central1' }}
+            TF_VAR_neo4j_uri: ${{ vars.NEO4J_URI }}
+            TF_VAR_neo4j_username: ${{ vars.NEO4J_USERNAME || 'neo4j' }}
+            TF_VAR_neo4j_database: ${{ vars.NEO4J_DATABASE }}
+            TF_VAR_image_tag: ${{ github.sha }}
+            TF_STATE_BUCKET: ${{ vars.TF_STATE_BUCKET }}
+        steps:
+            - uses: actions/checkout@v7
+
+            - uses: google-github-actions/auth@v3
+              with:
+                  project_id: ${{ vars.GCP_PROJECT_ID }}
+                  workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+                  service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
+
+            - uses: google-github-actions/setup-gcloud@v3
+
+            - uses: hashicorp/setup-terraform@v4
+              with:
+                  terraform_version: "1.15.9"
+                  terraform_wrapper: false
+
+            - name: Validar Terraform
+              run: |
+                  terraform -chdir=infra fmt -check
+                  terraform -chdir=infra init -input=false -backend-config="bucket=$TF_STATE_BUCKET"
+                  terraform -chdir=infra validate
+
+            - name: Publicar imagen
+              run: |
+                  gcloud auth configure-docker "$TF_VAR_region-docker.pkg.dev" --quiet
+                  IMAGE="$TF_VAR_region-docker.pkg.dev/$TF_VAR_project_id/dependencyguard/backend:$TF_VAR_image_tag"
+                  docker build --platform linux/amd64 -t "$IMAGE" .
+                  docker push "$IMAGE"
+
+            - name: Aplicar Terraform
+              run: |
+                  terraform -chdir=infra plan -input=false -lock-timeout=5m -out=deploy.tfplan
+                  terraform -chdir=infra apply -input=false -lock-timeout=5m deploy.tfplan
+
+            - uses: actions/setup-node@v7
+              with:
+                  node-version: "22"
+                  package-manager-cache: false
+
+            - name: Compilar frontend
+              env:
+                  VITE_FIREBASE_PROJECT_ID: ${{ vars.VITE_FIREBASE_PROJECT_ID }}
+                  VITE_FIREBASE_API_KEY: ${{ vars.VITE_FIREBASE_API_KEY }}
+              run: |
+                  npm --prefix frontend ci
+                  VITE_API_URL=$(terraform -chdir=infra output -raw backend_url)
+                  export VITE_API_URL
+                  npm --prefix frontend run build
+                  npm install --global firebase-tools@15.34.2
+
+            - uses: google-github-actions/auth@v3
+              with:
+                  project_id: ${{ vars.GCP_PROJECT_ID }}
+                  workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+                  service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
+
+            - name: Publicar frontend
+              run: |
+                  firebase target:apply hosting frontend "$TF_VAR_site_id" --project "$TF_VAR_project_id" --non-interactive
+                  firebase deploy --only hosting:frontend --project "$TF_VAR_project_id" --non-interactive

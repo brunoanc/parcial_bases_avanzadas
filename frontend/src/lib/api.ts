@@ -1,4 +1,8 @@
+import { authorization } from "./auth";
+import { baseUrl } from "./config";
+
 export type Kind = "projects" | "packages" | "vulnerabilities";
+
 export interface DependencyTarget {
     kind: "projects" | "packages";
     id: string;
@@ -6,6 +10,7 @@ export interface DependencyTarget {
 }
 
 export type NodeType = "Project" | "PackageVersion" | "Vulnerability";
+
 export interface GraphNode {
     id: string;
     type?: NodeType;
@@ -89,15 +94,18 @@ function validationMessage(issue: { loc: (string | number)[]; type: string }): s
     return `${field}: ${messages[issue.type] || "Revisa el valor."}`;
 }
 
-const baseUrl = (import.meta.env.VITE_API_URL || "http://127.0.0.1:8100").replace(/\/$/, "");
-
 export async function request<T>(path: string, method = "GET", body?: unknown): Promise<T> {
     let response: Response;
+    const headers: Record<string, string> = body ? { "Content-Type": "application/json" } : {};
+
+    if (!["GET", "HEAD", "OPTIONS"].includes(method)) {
+        headers.Authorization = await authorization();
+    }
 
     try {
         response = await fetch(`${baseUrl}${path}`, {
             method,
-            headers: body ? { "Content-Type": "application/json" } : {},
+            headers,
             body: body ? JSON.stringify(body) : undefined,
             signal: AbortSignal.timeout(30000)
         });

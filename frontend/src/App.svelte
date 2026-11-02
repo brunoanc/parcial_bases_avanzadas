@@ -1,6 +1,7 @@
 <script lang="ts">
-    // Importar las herramientas y los componentes necesarios
+    // Cargar la sesión, el mapa y las vistas
     import { onMount } from "svelte";
+    import { editor } from "./lib/auth";
     import Graph from "./lib/components/Graph.svelte";
     import Manage from "./lib/views/Manage.svelte";
     import Sidebar from "./lib/components/Sidebar.svelte";
@@ -33,6 +34,12 @@
     $: project = projects.find((item) => item.id === projectId);
     $: dependencyCount = graph.edges.filter((edge) => edge.type === "DEPENDS_ON").length;
 
+    // Cerrar el editor al terminar la sesión
+    $: if (!$editor && view === "manage") {
+        view = "explorer";
+        manageTarget = null;
+    }
+
     onMount(() => {
         // Cargar los datos al abrir el componente
         void refresh();
@@ -55,11 +62,11 @@
             await loadGraph(projectId);
         }
         catch (reason) {
-            // Mostrar el motivo por el que no se completó la operación
+            // Avisar si no se pudieron cargar los proyectos
             error = (reason as Error).message;
         }
         finally {
-            // Terminar el estado de carga aunque ocurra un error
+            // Terminar la carga de los proyectos
             loading = false;
         }
     }
@@ -92,13 +99,13 @@
             }
         }
         catch (reason) {
-            // Mostrar el motivo por el que no se completó la operación
+            // Conservar el error del proyecto que sigue seleccionado
             if (sequence === loadSequence) {
                 error = (reason as Error).message;
             }
         }
         finally {
-            // Terminar el estado de carga aunque ocurra un error
+            // Quitar la carga solo del proyecto actual
             if (sequence === loadSequence) {
                 loading = false;
             }
@@ -129,14 +136,14 @@
             }
         }
         catch (reason) {
-            // Mostrar el motivo por el que no se completó la operación
+            // Descartar el análisis si falló la consulta
             if (sequence === loadSequence) {
                 analysis = null;
                 error = (reason as Error).message;
             }
         }
         finally {
-            // Terminar el estado de carga aunque ocurra un error
+            // Volver a habilitar el análisis
             analyzing = false;
         }
     }
@@ -185,10 +192,12 @@
         {loading}
         onhome={() => returnToExplorer()}
         onmanage={() => {
+            // Abrir el catálogo sin conservar un editor anterior
             manageTarget = null;
             view = "manage";
         }}
         onproject={(id) => {
+            // Cambiar de proyecto y cerrar el editor
             view = "explorer";
             manageTarget = null;
             void loadGraph(id);
@@ -197,17 +206,15 @@
 
     <!-- Mostrar la vista activa del proyecto -->
     <main>
-        <!-- Mostrar el catálogo o el editor de dependencias -->
+        <!-- Elegir entre administración y exploración -->
         {#if view === "manage"}
+            <!-- Permitir volver del catálogo al proyecto -->
             <div class="topbar">
                 <button class="text-button back-link" onclick={() => returnToExplorer()}>
                     ← Volver a {project?.name || "proyectos"}
                 </button>
             </div>
-        {/if}
 
-        <!-- Mostrar el catálogo o el editor de dependencias -->
-        {#if view === "manage"}
             <!-- Recrear el editor cuando cambia el nodo seleccionado -->
             {#key manageTarget}
                 <Manage onchanged={refresh} initialTarget={manageTarget} onreturn={returnToExplorer}></Manage>
@@ -216,7 +223,7 @@
             <!-- Mostrar el proyecto y la acción de análisis -->
             <header class="explorer-heading">
                 <h1>{project?.name || "Proyectos"}</h1>
-                <!-- Mostrar las herramientas del proyecto seleccionado -->
+                <!-- Analizar el proyecto seleccionado -->
                 {#if projectId}
                     <button
                         class="analyze"
@@ -240,7 +247,7 @@
             <div class="explorer-layout" class:awaiting-project={!projectId}>
                 <!-- Mostrar el mapa y sus herramientas -->
                 <section class="graph-panel" aria-label="Grafo del proyecto">
-                    <!-- Mostrar las herramientas del proyecto seleccionado -->
+                    <!-- Mostrar los conteos del mapa -->
                     {#if projectId}
                         <!-- Mostrar el tamaño del grafo y el control de rutas -->
                         <header class="graph-toolbar">
@@ -285,9 +292,9 @@
                             <Graph data={graph} {highlighted} onselect={(node) => (selected = node)}></Graph>
                         {/if}
                     </div>
-                    <!-- Mostrar las herramientas del proyecto seleccionado -->
+                    <!-- Identificar los tipos de nodo por su color -->
                     {#if projectId}
-                        <!-- Explicar los colores y gestos del mapa -->
+                        <!-- Mostrar la leyenda del mapa -->
                         <footer class="graph-footer">
                             <div class="legend">
                                 <span>
@@ -307,7 +314,7 @@
                     {/if}
                 </section>
 
-                <!-- Mostrar las herramientas del proyecto seleccionado -->
+                <!-- Consultar los detalles y las rutas de exposición -->
                 {#if projectId}
                     <ProjectInspector
                         {selected}

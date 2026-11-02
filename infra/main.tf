@@ -82,7 +82,7 @@ resource "google_cloud_run_v2_service" "backend" {
   provider             = google-beta
   name                 = "dependencyguard-api"
   location             = var.region
-  invoker_iam_disabled = false
+  invoker_iam_disabled = true
 
   template {
     service_account = google_service_account.backend.email
@@ -97,6 +97,21 @@ resource "google_cloud_run_v2_service" "backend" {
 
       ports {
         container_port = 8080
+      }
+
+      env {
+        name  = "FIREBASE_PROJECT_ID"
+        value = var.project_id
+      }
+
+      env {
+        name  = "EDITOR_EMAIL"
+        value = var.editor_email
+      }
+
+      env {
+        name  = "FRONTEND_URL"
+        value = google_firebase_hosting_site.frontend.default_url
       }
 
       env {
@@ -154,6 +169,7 @@ resource "google_identity_platform_config" "auth" {
 
   authorized_domains = [
     "localhost",
+    "127.0.0.1",
     "${var.project_id}.firebaseapp.com",
     "${var.site_id}.firebaseapp.com",
     "${var.site_id}.web.app",

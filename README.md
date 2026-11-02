@@ -41,11 +41,11 @@ En otra terminal, inicia el frontend:
 npm --prefix frontend run dev
 ```
 
-Abre [DependencyGuard](http://127.0.0.1:5173/), selecciona un proyecto y pulsa **Analizar proyecto**. Usa **Administrar** para crear, editar y eliminar registros. Los cambios se guardan en AuraDB.
+Abre [DependencyGuard](http://127.0.0.1:5173/), selecciona un proyecto y pulsa **Analizar proyecto**. La consulta es pública. Para crear, editar o eliminar registros, inicia sesión con la cuenta de Google indicada en `EDITOR_EMAIL`. Los cambios se guardan en AuraDB.
 
 ## Despliegue
 
 El despliegue está preparado para GCP: backend en Cloud Run, frontend en Firebase Hosting y contraseña de Neo4j en Secret Manager. La base de datos permanece en AuraDB.
 
 - `infra/` contiene Terraform.
-- `.github/workflows/deploy.yml` publica la imagen del backend y aplica Terraform al subir cambios a `main`.
+- `.github/workflows/deploy.yml` publica el backend, aplica Terraform y despliega el frontend en Firebase Hosting al subir cambios a `main`.

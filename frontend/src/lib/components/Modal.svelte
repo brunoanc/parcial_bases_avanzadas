@@ -1,5 +1,5 @@
 <script lang="ts">
-    // Importar las herramientas y los componentes necesarios
+    // Cargar el montaje y el contenido del diálogo
     import { onMount, type Snippet } from "svelte";
 
     // Recibir los datos y acciones del componente
@@ -8,6 +8,7 @@
     // Guardar los datos y el estado de esta vista
     let dialog: HTMLDialogElement;
 
+    // Abrir el diálogo cuando se monta el componente
     onMount(() => dialog.showModal());
 </script>
 
@@ -17,6 +18,7 @@
     bind:this={dialog}
     aria-labelledby={label}
     oncancel={(event) => {
+        // Aplicar las mismas reglas de cierre al presionar Escape
         event.preventDefault();
         onclose();
     }}
