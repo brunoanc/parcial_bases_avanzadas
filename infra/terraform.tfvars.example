@@ -1,0 +1,3 @@
+project_id = "tu-proyecto-gcp"
+site_id    = "tu-sitio-dependencyguard"
+neo4j_uri  = "neo4j+s://YOUR_INSTANCE.databases.neo4j.io"

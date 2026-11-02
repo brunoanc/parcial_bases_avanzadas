@@ -1,0 +1,1504 @@
+{
+    "projects": [
+        {
+            "id": "demo-orbit",
+            "name": "Tienda Horizonte",
+            "description": "Catálogo, carrito y proceso de compra."
+        },
+        {
+            "id": "demo-beacon",
+            "name": "Central de eventos",
+            "description": "Recepción y distribución de eventos entre servicios."
+        },
+        {
+            "id": "demo-harbor",
+            "name": "Centro de ayuda",
+            "description": "Guías y documentación para clientes."
+        }
+    ],
+    "packages": [
+        {
+            "id": "npm:accepts@1.3.8",
+            "name": "accepts",
+            "version": "1.3.8",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:ajv@6.15.0",
+            "name": "ajv",
+            "version": "6.15.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:array-flatten@1.1.1",
+            "name": "array-flatten",
+            "version": "1.1.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:asn1@0.2.6",
+            "name": "asn1",
+            "version": "0.2.6",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:assert-plus@1.0.0",
+            "name": "assert-plus",
+            "version": "1.0.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:asynckit@0.4.0",
+            "name": "asynckit",
+            "version": "0.4.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:aws-sign2@0.7.0",
+            "name": "aws-sign2",
+            "version": "0.7.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:aws4@1.13.2",
+            "name": "aws4",
+            "version": "1.13.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:axios@0.21.1",
+            "name": "axios",
+            "version": "0.21.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:axios@0.21.2",
+            "name": "axios",
+            "version": "0.21.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:bcrypt-pbkdf@1.0.2",
+            "name": "bcrypt-pbkdf",
+            "version": "1.0.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:body-parser@1.19.0",
+            "name": "body-parser",
+            "version": "1.19.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:bytes@3.1.0",
+            "name": "bytes",
+            "version": "3.1.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:caseless@0.12.0",
+            "name": "caseless",
+            "version": "0.12.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:combined-stream@1.0.8",
+            "name": "combined-stream",
+            "version": "1.0.8",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:content-disposition@0.5.3",
+            "name": "content-disposition",
+            "version": "0.5.3",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:content-type@1.0.5",
+            "name": "content-type",
+            "version": "1.0.5",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:cookie@0.4.0",
+            "name": "cookie",
+            "version": "0.4.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:cookie-signature@1.0.6",
+            "name": "cookie-signature",
+            "version": "1.0.6",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:core-util-is@1.0.2",
+            "name": "core-util-is",
+            "version": "1.0.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:dashdash@1.14.1",
+            "name": "dashdash",
+            "version": "1.14.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:debug@2.6.9",
+            "name": "debug",
+            "version": "2.6.9",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:delayed-stream@1.0.0",
+            "name": "delayed-stream",
+            "version": "1.0.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:depd@1.1.2",
+            "name": "depd",
+            "version": "1.1.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:destroy@1.0.4",
+            "name": "destroy",
+            "version": "1.0.4",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:ecc-jsbn@0.1.2",
+            "name": "ecc-jsbn",
+            "version": "0.1.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:ee-first@1.1.1",
+            "name": "ee-first",
+            "version": "1.1.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:encodeurl@1.0.2",
+            "name": "encodeurl",
+            "version": "1.0.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:escape-html@1.0.3",
+            "name": "escape-html",
+            "version": "1.0.3",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:etag@1.8.1",
+            "name": "etag",
+            "version": "1.8.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:express@4.17.1",
+            "name": "express",
+            "version": "4.17.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:extend@3.0.2",
+            "name": "extend",
+            "version": "3.0.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:extsprintf@1.3.0",
+            "name": "extsprintf",
+            "version": "1.3.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:fast-deep-equal@3.1.3",
+            "name": "fast-deep-equal",
+            "version": "3.1.3",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:fast-json-stable-stringify@2.1.0",
+            "name": "fast-json-stable-stringify",
+            "version": "2.1.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:finalhandler@1.1.2",
+            "name": "finalhandler",
+            "version": "1.1.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:follow-redirects@1.16.2",
+            "name": "follow-redirects",
+            "version": "1.16.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:forever-agent@0.6.1",
+            "name": "forever-agent",
+            "version": "0.6.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:form-data@2.3.3",
+            "name": "form-data",
+            "version": "2.3.3",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:forwarded@0.2.0",
+            "name": "forwarded",
+            "version": "0.2.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:fresh@0.5.2",
+            "name": "fresh",
+            "version": "0.5.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:getpass@0.1.7",
+            "name": "getpass",
+            "version": "0.1.7",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:handlebars@4.7.6",
+            "name": "handlebars",
+            "version": "4.7.6",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:handlebars@4.7.7",
+            "name": "handlebars",
+            "version": "4.7.7",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:har-schema@2.0.0",
+            "name": "har-schema",
+            "version": "2.0.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:har-validator@5.1.5",
+            "name": "har-validator",
+            "version": "5.1.5",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:http-errors@1.7.2",
+            "name": "http-errors",
+            "version": "1.7.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:http-signature@1.2.0",
+            "name": "http-signature",
+            "version": "1.2.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:iconv-lite@0.4.24",
+            "name": "iconv-lite",
+            "version": "0.4.24",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:inherits@2.0.3",
+            "name": "inherits",
+            "version": "2.0.3",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:ipaddr.js@1.9.1",
+            "name": "ipaddr.js",
+            "version": "1.9.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:is-typedarray@1.0.0",
+            "name": "is-typedarray",
+            "version": "1.0.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:isstream@0.1.2",
+            "name": "isstream",
+            "version": "0.1.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:jsbn@0.1.1",
+            "name": "jsbn",
+            "version": "0.1.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:json-schema@0.4.0",
+            "name": "json-schema",
+            "version": "0.4.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:json-schema-traverse@0.4.1",
+            "name": "json-schema-traverse",
+            "version": "0.4.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:json-stringify-safe@5.0.1",
+            "name": "json-stringify-safe",
+            "version": "5.0.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:jsprim@1.4.2",
+            "name": "jsprim",
+            "version": "1.4.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:lodash@4.17.20",
+            "name": "lodash",
+            "version": "4.17.20",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:lodash@4.17.21",
+            "name": "lodash",
+            "version": "4.17.21",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:media-typer@0.3.0",
+            "name": "media-typer",
+            "version": "0.3.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:merge-descriptors@1.0.1",
+            "name": "merge-descriptors",
+            "version": "1.0.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:methods@1.1.2",
+            "name": "methods",
+            "version": "1.1.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:mime@1.6.0",
+            "name": "mime",
+            "version": "1.6.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:mime-db@1.52.0",
+            "name": "mime-db",
+            "version": "1.52.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:mime-types@2.1.35",
+            "name": "mime-types",
+            "version": "2.1.35",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:minimist@1.2.5",
+            "name": "minimist",
+            "version": "1.2.5",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:minimist@1.2.6",
+            "name": "minimist",
+            "version": "1.2.6",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:ms@2.0.0",
+            "name": "ms",
+            "version": "2.0.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:ms@2.1.1",
+            "name": "ms",
+            "version": "2.1.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:negotiator@0.6.3",
+            "name": "negotiator",
+            "version": "0.6.3",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:neo-async@2.6.2",
+            "name": "neo-async",
+            "version": "2.6.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:oauth-sign@0.9.0",
+            "name": "oauth-sign",
+            "version": "0.9.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:on-finished@2.3.0",
+            "name": "on-finished",
+            "version": "2.3.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:parseurl@1.3.3",
+            "name": "parseurl",
+            "version": "1.3.3",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:path-to-regexp@0.1.7",
+            "name": "path-to-regexp",
+            "version": "0.1.7",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:performance-now@2.1.0",
+            "name": "performance-now",
+            "version": "2.1.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:proxy-addr@2.0.8",
+            "name": "proxy-addr",
+            "version": "2.0.8",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:psl@1.15.0",
+            "name": "psl",
+            "version": "1.15.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:punycode@2.3.1",
+            "name": "punycode",
+            "version": "2.3.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:qs@6.5.2",
+            "name": "qs",
+            "version": "6.5.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:qs@6.7.0",
+            "name": "qs",
+            "version": "6.7.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:qs@6.7.3",
+            "name": "qs",
+            "version": "6.7.3",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:range-parser@1.2.1",
+            "name": "range-parser",
+            "version": "1.2.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:raw-body@2.4.0",
+            "name": "raw-body",
+            "version": "2.4.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:request@2.88.2",
+            "name": "request",
+            "version": "2.88.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:safe-buffer@5.1.2",
+            "name": "safe-buffer",
+            "version": "5.1.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:safer-buffer@2.1.2",
+            "name": "safer-buffer",
+            "version": "2.1.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:send@0.17.1",
+            "name": "send",
+            "version": "0.17.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:serve-static@1.14.1",
+            "name": "serve-static",
+            "version": "1.14.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:setprototypeof@1.1.1",
+            "name": "setprototypeof",
+            "version": "1.1.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:source-map@0.6.1",
+            "name": "source-map",
+            "version": "0.6.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:sshpk@1.18.0",
+            "name": "sshpk",
+            "version": "1.18.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:statuses@1.5.0",
+            "name": "statuses",
+            "version": "1.5.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:toidentifier@1.0.0",
+            "name": "toidentifier",
+            "version": "1.0.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:tough-cookie@2.5.0",
+            "name": "tough-cookie",
+            "version": "2.5.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:tunnel-agent@0.6.0",
+            "name": "tunnel-agent",
+            "version": "0.6.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:tweetnacl@0.14.5",
+            "name": "tweetnacl",
+            "version": "0.14.5",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:type-is@1.6.18",
+            "name": "type-is",
+            "version": "1.6.18",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:uglify-js@3.19.3",
+            "name": "uglify-js",
+            "version": "3.19.3",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:unpipe@1.0.0",
+            "name": "unpipe",
+            "version": "1.0.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:uri-js@4.4.1",
+            "name": "uri-js",
+            "version": "4.4.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:utils-merge@1.0.1",
+            "name": "utils-merge",
+            "version": "1.0.1",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:uuid@3.4.0",
+            "name": "uuid",
+            "version": "3.4.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:vary@1.1.2",
+            "name": "vary",
+            "version": "1.1.2",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:verror@1.10.0",
+            "name": "verror",
+            "version": "1.10.0",
+            "ecosystem": "npm"
+        },
+        {
+            "id": "npm:wordwrap@1.0.0",
+            "name": "wordwrap",
+            "version": "1.0.0",
+            "ecosystem": "npm"
+        }
+    ],
+    "dependencies": [
+        {
+            "source": "npm:accepts@1.3.8",
+            "target": "npm:mime-types@2.1.35"
+        },
+        {
+            "source": "npm:accepts@1.3.8",
+            "target": "npm:negotiator@0.6.3"
+        },
+        {
+            "source": "npm:ajv@6.15.0",
+            "target": "npm:fast-deep-equal@3.1.3"
+        },
+        {
+            "source": "npm:ajv@6.15.0",
+            "target": "npm:fast-json-stable-stringify@2.1.0"
+        },
+        {
+            "source": "npm:ajv@6.15.0",
+            "target": "npm:json-schema-traverse@0.4.1"
+        },
+        {
+            "source": "npm:ajv@6.15.0",
+            "target": "npm:uri-js@4.4.1"
+        },
+        {
+            "source": "npm:asn1@0.2.6",
+            "target": "npm:safer-buffer@2.1.2"
+        },
+        {
+            "source": "npm:axios@0.21.1",
+            "target": "npm:follow-redirects@1.16.2"
+        },
+        {
+            "source": "npm:axios@0.21.2",
+            "target": "npm:follow-redirects@1.16.2"
+        },
+        {
+            "source": "npm:bcrypt-pbkdf@1.0.2",
+            "target": "npm:tweetnacl@0.14.5"
+        },
+        {
+            "source": "npm:body-parser@1.19.0",
+            "target": "npm:bytes@3.1.0"
+        },
+        {
+            "source": "npm:body-parser@1.19.0",
+            "target": "npm:content-type@1.0.5"
+        },
+        {
+            "source": "npm:body-parser@1.19.0",
+            "target": "npm:debug@2.6.9"
+        },
+        {
+            "source": "npm:body-parser@1.19.0",
+            "target": "npm:depd@1.1.2"
+        },
+        {
+            "source": "npm:body-parser@1.19.0",
+            "target": "npm:http-errors@1.7.2"
+        },
+        {
+            "source": "npm:body-parser@1.19.0",
+            "target": "npm:iconv-lite@0.4.24"
+        },
+        {
+            "source": "npm:body-parser@1.19.0",
+            "target": "npm:on-finished@2.3.0"
+        },
+        {
+            "source": "npm:body-parser@1.19.0",
+            "target": "npm:qs@6.7.0"
+        },
+        {
+            "source": "npm:body-parser@1.19.0",
+            "target": "npm:raw-body@2.4.0"
+        },
+        {
+            "source": "npm:body-parser@1.19.0",
+            "target": "npm:type-is@1.6.18"
+        },
+        {
+            "source": "npm:combined-stream@1.0.8",
+            "target": "npm:delayed-stream@1.0.0"
+        },
+        {
+            "source": "npm:content-disposition@0.5.3",
+            "target": "npm:safe-buffer@5.1.2"
+        },
+        {
+            "source": "npm:dashdash@1.14.1",
+            "target": "npm:assert-plus@1.0.0"
+        },
+        {
+            "source": "npm:debug@2.6.9",
+            "target": "npm:ms@2.0.0"
+        },
+        {
+            "source": "npm:ecc-jsbn@0.1.2",
+            "target": "npm:jsbn@0.1.1"
+        },
+        {
+            "source": "npm:ecc-jsbn@0.1.2",
+            "target": "npm:safer-buffer@2.1.2"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:accepts@1.3.8"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:array-flatten@1.1.1"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:body-parser@1.19.0"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:content-disposition@0.5.3"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:content-type@1.0.5"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:cookie-signature@1.0.6"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:cookie@0.4.0"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:debug@2.6.9"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:depd@1.1.2"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:encodeurl@1.0.2"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:escape-html@1.0.3"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:etag@1.8.1"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:finalhandler@1.1.2"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:fresh@0.5.2"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:merge-descriptors@1.0.1"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:methods@1.1.2"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:on-finished@2.3.0"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:parseurl@1.3.3"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:path-to-regexp@0.1.7"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:proxy-addr@2.0.8"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:qs@6.7.0"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:range-parser@1.2.1"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:safe-buffer@5.1.2"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:send@0.17.1"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:serve-static@1.14.1"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:setprototypeof@1.1.1"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:statuses@1.5.0"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:type-is@1.6.18"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:utils-merge@1.0.1"
+        },
+        {
+            "source": "npm:express@4.17.1",
+            "target": "npm:vary@1.1.2"
+        },
+        {
+            "source": "npm:finalhandler@1.1.2",
+            "target": "npm:debug@2.6.9"
+        },
+        {
+            "source": "npm:finalhandler@1.1.2",
+            "target": "npm:encodeurl@1.0.2"
+        },
+        {
+            "source": "npm:finalhandler@1.1.2",
+            "target": "npm:escape-html@1.0.3"
+        },
+        {
+            "source": "npm:finalhandler@1.1.2",
+            "target": "npm:on-finished@2.3.0"
+        },
+        {
+            "source": "npm:finalhandler@1.1.2",
+            "target": "npm:parseurl@1.3.3"
+        },
+        {
+            "source": "npm:finalhandler@1.1.2",
+            "target": "npm:statuses@1.5.0"
+        },
+        {
+            "source": "npm:finalhandler@1.1.2",
+            "target": "npm:unpipe@1.0.0"
+        },
+        {
+            "source": "npm:form-data@2.3.3",
+            "target": "npm:asynckit@0.4.0"
+        },
+        {
+            "source": "npm:form-data@2.3.3",
+            "target": "npm:combined-stream@1.0.8"
+        },
+        {
+            "source": "npm:form-data@2.3.3",
+            "target": "npm:mime-types@2.1.35"
+        },
+        {
+            "source": "npm:getpass@0.1.7",
+            "target": "npm:assert-plus@1.0.0"
+        },
+        {
+            "source": "npm:handlebars@4.7.6",
+            "target": "npm:minimist@1.2.5"
+        },
+        {
+            "source": "npm:handlebars@4.7.6",
+            "target": "npm:neo-async@2.6.2"
+        },
+        {
+            "source": "npm:handlebars@4.7.6",
+            "target": "npm:source-map@0.6.1"
+        },
+        {
+            "source": "npm:handlebars@4.7.6",
+            "target": "npm:uglify-js@3.19.3"
+        },
+        {
+            "source": "npm:handlebars@4.7.6",
+            "target": "npm:wordwrap@1.0.0"
+        },
+        {
+            "source": "npm:handlebars@4.7.7",
+            "target": "npm:minimist@1.2.5"
+        },
+        {
+            "source": "npm:handlebars@4.7.7",
+            "target": "npm:neo-async@2.6.2"
+        },
+        {
+            "source": "npm:handlebars@4.7.7",
+            "target": "npm:source-map@0.6.1"
+        },
+        {
+            "source": "npm:handlebars@4.7.7",
+            "target": "npm:uglify-js@3.19.3"
+        },
+        {
+            "source": "npm:handlebars@4.7.7",
+            "target": "npm:wordwrap@1.0.0"
+        },
+        {
+            "source": "npm:har-validator@5.1.5",
+            "target": "npm:ajv@6.15.0"
+        },
+        {
+            "source": "npm:har-validator@5.1.5",
+            "target": "npm:har-schema@2.0.0"
+        },
+        {
+            "source": "npm:http-errors@1.7.2",
+            "target": "npm:depd@1.1.2"
+        },
+        {
+            "source": "npm:http-errors@1.7.2",
+            "target": "npm:inherits@2.0.3"
+        },
+        {
+            "source": "npm:http-errors@1.7.2",
+            "target": "npm:setprototypeof@1.1.1"
+        },
+        {
+            "source": "npm:http-errors@1.7.2",
+            "target": "npm:statuses@1.5.0"
+        },
+        {
+            "source": "npm:http-errors@1.7.2",
+            "target": "npm:toidentifier@1.0.0"
+        },
+        {
+            "source": "npm:http-signature@1.2.0",
+            "target": "npm:assert-plus@1.0.0"
+        },
+        {
+            "source": "npm:http-signature@1.2.0",
+            "target": "npm:jsprim@1.4.2"
+        },
+        {
+            "source": "npm:http-signature@1.2.0",
+            "target": "npm:sshpk@1.18.0"
+        },
+        {
+            "source": "npm:iconv-lite@0.4.24",
+            "target": "npm:safer-buffer@2.1.2"
+        },
+        {
+            "source": "npm:jsprim@1.4.2",
+            "target": "npm:assert-plus@1.0.0"
+        },
+        {
+            "source": "npm:jsprim@1.4.2",
+            "target": "npm:extsprintf@1.3.0"
+        },
+        {
+            "source": "npm:jsprim@1.4.2",
+            "target": "npm:json-schema@0.4.0"
+        },
+        {
+            "source": "npm:jsprim@1.4.2",
+            "target": "npm:verror@1.10.0"
+        },
+        {
+            "source": "npm:mime-types@2.1.35",
+            "target": "npm:mime-db@1.52.0"
+        },
+        {
+            "source": "npm:on-finished@2.3.0",
+            "target": "npm:ee-first@1.1.1"
+        },
+        {
+            "source": "npm:proxy-addr@2.0.8",
+            "target": "npm:forwarded@0.2.0"
+        },
+        {
+            "source": "npm:proxy-addr@2.0.8",
+            "target": "npm:ipaddr.js@1.9.1"
+        },
+        {
+            "source": "npm:psl@1.15.0",
+            "target": "npm:punycode@2.3.1"
+        },
+        {
+            "source": "npm:raw-body@2.4.0",
+            "target": "npm:bytes@3.1.0"
+        },
+        {
+            "source": "npm:raw-body@2.4.0",
+            "target": "npm:http-errors@1.7.2"
+        },
+        {
+            "source": "npm:raw-body@2.4.0",
+            "target": "npm:iconv-lite@0.4.24"
+        },
+        {
+            "source": "npm:raw-body@2.4.0",
+            "target": "npm:unpipe@1.0.0"
+        },
+        {
+            "source": "npm:request@2.88.2",
+            "target": "npm:aws-sign2@0.7.0"
+        },
+        {
+            "source": "npm:request@2.88.2",
+            "target": "npm:aws4@1.13.2"
+        },
+        {
+            "source": "npm:request@2.88.2",
+            "target": "npm:caseless@0.12.0"
+        },
+        {
+            "source": "npm:request@2.88.2",
+            "target": "npm:combined-stream@1.0.8"
+        },
+        {
+            "source": "npm:request@2.88.2",
+            "target": "npm:extend@3.0.2"
+        },
+        {
+            "source": "npm:request@2.88.2",
+            "target": "npm:forever-agent@0.6.1"
+        },
+        {
+            "source": "npm:request@2.88.2",
+            "target": "npm:form-data@2.3.3"
+        },
+        {
+            "source": "npm:request@2.88.2",
+            "target": "npm:har-validator@5.1.5"
+        },
+        {
+            "source": "npm:request@2.88.2",
+            "target": "npm:http-signature@1.2.0"
+        },
+        {
+            "source": "npm:request@2.88.2",
+            "target": "npm:is-typedarray@1.0.0"
+        },
+        {
+            "source": "npm:request@2.88.2",
+            "target": "npm:isstream@0.1.2"
+        },
+        {
+            "source": "npm:request@2.88.2",
+            "target": "npm:json-stringify-safe@5.0.1"
+        },
+        {
+            "source": "npm:request@2.88.2",
+            "target": "npm:mime-types@2.1.35"
+        },
+        {
+            "source": "npm:request@2.88.2",
+            "target": "npm:oauth-sign@0.9.0"
+        },
+        {
+            "source": "npm:request@2.88.2",
+            "target": "npm:performance-now@2.1.0"
+        },
+        {
+            "source": "npm:request@2.88.2",
+            "target": "npm:qs@6.5.2"
+        },
+        {
+            "source": "npm:request@2.88.2",
+            "target": "npm:safe-buffer@5.1.2"
+        },
+        {
+            "source": "npm:request@2.88.2",
+            "target": "npm:tough-cookie@2.5.0"
+        },
+        {
+            "source": "npm:request@2.88.2",
+            "target": "npm:tunnel-agent@0.6.0"
+        },
+        {
+            "source": "npm:request@2.88.2",
+            "target": "npm:uuid@3.4.0"
+        },
+        {
+            "source": "npm:send@0.17.1",
+            "target": "npm:debug@2.6.9"
+        },
+        {
+            "source": "npm:send@0.17.1",
+            "target": "npm:depd@1.1.2"
+        },
+        {
+            "source": "npm:send@0.17.1",
+            "target": "npm:destroy@1.0.4"
+        },
+        {
+            "source": "npm:send@0.17.1",
+            "target": "npm:encodeurl@1.0.2"
+        },
+        {
+            "source": "npm:send@0.17.1",
+            "target": "npm:escape-html@1.0.3"
+        },
+        {
+            "source": "npm:send@0.17.1",
+            "target": "npm:etag@1.8.1"
+        },
+        {
+            "source": "npm:send@0.17.1",
+            "target": "npm:fresh@0.5.2"
+        },
+        {
+            "source": "npm:send@0.17.1",
+            "target": "npm:http-errors@1.7.2"
+        },
+        {
+            "source": "npm:send@0.17.1",
+            "target": "npm:mime@1.6.0"
+        },
+        {
+            "source": "npm:send@0.17.1",
+            "target": "npm:ms@2.1.1"
+        },
+        {
+            "source": "npm:send@0.17.1",
+            "target": "npm:on-finished@2.3.0"
+        },
+        {
+            "source": "npm:send@0.17.1",
+            "target": "npm:range-parser@1.2.1"
+        },
+        {
+            "source": "npm:send@0.17.1",
+            "target": "npm:statuses@1.5.0"
+        },
+        {
+            "source": "npm:serve-static@1.14.1",
+            "target": "npm:encodeurl@1.0.2"
+        },
+        {
+            "source": "npm:serve-static@1.14.1",
+            "target": "npm:escape-html@1.0.3"
+        },
+        {
+            "source": "npm:serve-static@1.14.1",
+            "target": "npm:parseurl@1.3.3"
+        },
+        {
+            "source": "npm:serve-static@1.14.1",
+            "target": "npm:send@0.17.1"
+        },
+        {
+            "source": "npm:sshpk@1.18.0",
+            "target": "npm:asn1@0.2.6"
+        },
+        {
+            "source": "npm:sshpk@1.18.0",
+            "target": "npm:assert-plus@1.0.0"
+        },
+        {
+            "source": "npm:sshpk@1.18.0",
+            "target": "npm:bcrypt-pbkdf@1.0.2"
+        },
+        {
+            "source": "npm:sshpk@1.18.0",
+            "target": "npm:dashdash@1.14.1"
+        },
+        {
+            "source": "npm:sshpk@1.18.0",
+            "target": "npm:ecc-jsbn@0.1.2"
+        },
+        {
+            "source": "npm:sshpk@1.18.0",
+            "target": "npm:getpass@0.1.7"
+        },
+        {
+            "source": "npm:sshpk@1.18.0",
+            "target": "npm:jsbn@0.1.1"
+        },
+        {
+            "source": "npm:sshpk@1.18.0",
+            "target": "npm:safer-buffer@2.1.2"
+        },
+        {
+            "source": "npm:sshpk@1.18.0",
+            "target": "npm:tweetnacl@0.14.5"
+        },
+        {
+            "source": "npm:tough-cookie@2.5.0",
+            "target": "npm:psl@1.15.0"
+        },
+        {
+            "source": "npm:tough-cookie@2.5.0",
+            "target": "npm:punycode@2.3.1"
+        },
+        {
+            "source": "npm:tunnel-agent@0.6.0",
+            "target": "npm:safe-buffer@5.1.2"
+        },
+        {
+            "source": "npm:type-is@1.6.18",
+            "target": "npm:media-typer@0.3.0"
+        },
+        {
+            "source": "npm:type-is@1.6.18",
+            "target": "npm:mime-types@2.1.35"
+        },
+        {
+            "source": "npm:uri-js@4.4.1",
+            "target": "npm:punycode@2.3.1"
+        },
+        {
+            "source": "npm:verror@1.10.0",
+            "target": "npm:assert-plus@1.0.0"
+        },
+        {
+            "source": "npm:verror@1.10.0",
+            "target": "npm:core-util-is@1.0.2"
+        },
+        {
+            "source": "npm:verror@1.10.0",
+            "target": "npm:extsprintf@1.3.0"
+        },
+        {
+            "source": "demo-orbit",
+            "target": "npm:express@4.17.1"
+        },
+        {
+            "source": "demo-orbit",
+            "target": "npm:axios@0.21.1"
+        },
+        {
+            "source": "demo-orbit",
+            "target": "npm:handlebars@4.7.6"
+        },
+        {
+            "source": "demo-orbit",
+            "target": "npm:lodash@4.17.20"
+        },
+        {
+            "source": "demo-beacon",
+            "target": "npm:express@4.17.1"
+        },
+        {
+            "source": "demo-beacon",
+            "target": "npm:request@2.88.2"
+        },
+        {
+            "source": "demo-beacon",
+            "target": "npm:lodash@4.17.20"
+        },
+        {
+            "source": "demo-harbor",
+            "target": "npm:express@4.17.1"
+        },
+        {
+            "source": "demo-harbor",
+            "target": "npm:handlebars@4.7.6"
+        },
+        {
+            "source": "demo-harbor",
+            "target": "npm:axios@0.21.1"
+        },
+        {
+            "source": "demo-harbor",
+            "target": "npm:request@2.88.2"
+        }
+    ],
+    "advisories": [
+        {
+            "id": "CVE-2021-3749",
+            "severity": "high",
+            "description": "Denegación de servicio por complejidad excesiva de una expresión regular en Axios.",
+            "cvssScore": 7.5,
+            "cvssVector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "sourceUrl": "https://github.com/advisories/GHSA-cph5-m8f7-6c5x",
+            "ranges": [
+                {
+                    "name": "axios",
+                    "range": "< 0.21.2",
+                    "patchedVersion": "0.21.2"
+                }
+            ],
+            "affectedPackages": [
+                {
+                    "name": "axios",
+                    "version": "0.21.1"
+                }
+            ]
+        },
+        {
+            "id": "CVE-2021-23337",
+            "severity": "high",
+            "description": "Inyección de comandos en la función template de Lodash.",
+            "cvssScore": 7.2,
+            "cvssVector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+            "sourceUrl": "https://github.com/advisories/GHSA-35jh-r3h4-6jhm",
+            "ranges": [
+                {
+                    "name": "lodash",
+                    "range": "< 4.17.21",
+                    "patchedVersion": "4.17.21"
+                },
+                {
+                    "name": "lodash-es",
+                    "range": "< 4.17.21",
+                    "patchedVersion": "4.17.21"
+                },
+                {
+                    "name": "lodash.template",
+                    "range": "<= 4.5.0",
+                    "patchedVersion": null
+                },
+                {
+                    "name": "lodash-template",
+                    "range": "<= 1.0.0",
+                    "patchedVersion": null
+                }
+            ],
+            "affectedPackages": [
+                {
+                    "name": "lodash",
+                    "version": "4.17.20"
+                }
+            ]
+        },
+        {
+            "id": "CVE-2021-44906",
+            "severity": "critical",
+            "description": "Contaminación del prototipo al procesar argumentos con Minimist.",
+            "cvssScore": 9.8,
+            "cvssVector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "sourceUrl": "https://github.com/advisories/GHSA-xvch-5gv4-984h",
+            "ranges": [
+                {
+                    "name": "minimist",
+                    "range": ">= 1.0.0, < 1.2.6",
+                    "patchedVersion": "1.2.6"
+                },
+                {
+                    "name": "minimist",
+                    "range": "< 0.2.4",
+                    "patchedVersion": "0.2.4"
+                }
+            ],
+            "affectedPackages": [
+                {
+                    "name": "minimist",
+                    "version": "1.2.5"
+                }
+            ]
+        },
+        {
+            "id": "CVE-2021-23369",
+            "severity": "critical",
+            "description": "Ejecución remota de código al compilar plantillas de Handlebars con opciones no confiables.",
+            "cvssScore": 9.8,
+            "cvssVector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "sourceUrl": "https://github.com/advisories/GHSA-f2jv-r9rf-7988",
+            "ranges": [
+                {
+                    "name": "handlebars",
+                    "range": "< 4.7.7",
+                    "patchedVersion": "4.7.7"
+                }
+            ],
+            "affectedPackages": [
+                {
+                    "name": "handlebars",
+                    "version": "4.7.6"
+                }
+            ]
+        },
+        {
+            "id": "CVE-2022-24999",
+            "severity": "high",
+            "description": "Contaminación del prototipo en qs que puede bloquear el proceso.",
+            "cvssScore": 7.5,
+            "cvssVector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "sourceUrl": "https://github.com/advisories/GHSA-hrpp-h998-j3pp",
+            "ranges": [
+                {
+                    "name": "qs",
+                    "range": ">= 6.10.0, < 6.10.3",
+                    "patchedVersion": "6.10.3"
+                },
+                {
+                    "name": "qs",
+                    "range": ">= 6.9.0, < 6.9.7",
+                    "patchedVersion": "6.9.7"
+                },
+                {
+                    "name": "qs",
+                    "range": ">= 6.8.0, < 6.8.3",
+                    "patchedVersion": "6.8.3"
+                },
+                {
+                    "name": "qs",
+                    "range": ">= 6.7.0, < 6.7.3",
+                    "patchedVersion": "6.7.3"
+                },
+                {
+                    "name": "qs",
+                    "range": ">= 6.6.0, < 6.6.1",
+                    "patchedVersion": "6.6.1"
+                },
+                {
+                    "name": "qs",
+                    "range": ">= 6.5.0, < 6.5.3",
+                    "patchedVersion": "6.5.3"
+                },
+                {
+                    "name": "qs",
+                    "range": ">= 6.4.0, < 6.4.1",
+                    "patchedVersion": "6.4.1"
+                },
+                {
+                    "name": "qs",
+                    "range": ">= 6.3.0, < 6.3.3",
+                    "patchedVersion": "6.3.3"
+                },
+                {
+                    "name": "qs",
+                    "range": "< 6.2.4",
+                    "patchedVersion": "6.2.4"
+                }
+            ],
+            "affectedPackages": [
+                {
+                    "name": "qs",
+                    "version": "6.5.2"
+                },
+                {
+                    "name": "qs",
+                    "version": "6.7.0"
+                }
+            ]
+        }
+    ]
+}

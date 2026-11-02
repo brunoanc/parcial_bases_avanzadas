@@ -1,0 +1,139 @@
+:root {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-synthesis: none;
+    color: var(--text);
+    background: var(--background);
+    --background: #211f1d;
+    --surface: #292622;
+    --raised: #34302b;
+    --canvas: #24211e;
+    --line: #49423b;
+    --text: #eee5dc;
+    --muted: #b7aaa0;
+    --subtle: #8f8378;
+    --accent: #ce936a;
+    --accent-hover: #e2ae88;
+    --accent-ink: #251b14;
+    --accent-surface: #453429;
+    --danger: #e9877d;
+    --danger-surface: #442b28;
+    --project-fill: #514030;
+    --project-stroke: #ce936a;
+    --package-fill: #6f655b;
+    --package-stroke: #b6a697;
+    --vulnerability-fill: #653d35;
+    --vulnerability-stroke: #e9877d;
+    --edge: #7d6f62;
+    --route: #efb989;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+button, input, select, textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    color: var(--text);
+    background: var(--raised);
+    border: 1px solid #64584d;
+    border-radius: 3px;
+    padding: 9px 13px;
+    line-height: 1.3;
+    transition: background 120ms, border-color 120ms;
+}
+
+button:hover:not(:disabled) {
+    background: #423a32;
+    border-color: var(--muted);
+}
+
+button:disabled {
+    opacity: 0.45;
+    cursor: default;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+h1 {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+code {
+    font: 12px "IBM Plex Mono", monospace;
+    overflow-wrap: anywhere;
+}
+
+.muted {
+    color: var(--muted);
+    line-height: 1.6;
+    font-size: 13px;
+}
+
+.primary {
+    background: var(--accent);
+    border-color: var(--route);
+    color: var(--accent-ink);
+    font-weight: 600;
+}
+
+.primary:hover:not(:disabled) {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+}
+
+.text-button {
+    border: 0;
+    background: none;
+    color: var(--muted);
+    padding: 4px 0;
+    font-size: 12px;
+}
+
+.text-button:hover:not(:disabled) {
+    background: none;
+    color: var(--text);
+}
+
+.danger-text {
+    color: var(--danger);
+}
+
+.danger {
+    background: #84493f;
+    border-color: #b66b60;
+}
